@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f0f8ff;
+        }
+        #qoute
+        {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Quote Generator</h1>
+    <p id="qoute">Click the button to get a quote</p>
+    <button onclick="showQuote()">New Quote</button>
+    <script>
+        const quotes=["Believe in yourself.","Keep going, you're getting there!",
+            "Every day is a new beginning.","Dream big, work hard.","Make it happen."
+            ,"You are stronger than you think."
+        ];
+        function showQuote()
+        {
+            const randomindex=Math.floor(Math.random() * quotes.length);
+            const text= document.getElementById("qoute");
+            text.innerHTML=`${quotes[randomindex]}`;
+        }
+    </script>
+</body>
+</html>
